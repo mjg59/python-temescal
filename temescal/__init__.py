@@ -308,3 +308,7 @@ class temescal:
     def set_factory(self):
         data = {"cmd": "set", "msg": "FACTORY_SET_REQ"}
         self.send_packet(data)
+
+    def set_power(self, power_on):
+        data = {"cmd": "set", "data": {"b_powerkey": power_on}, "msg": "SPK_LIST_VIEW_INFO"}
+        self.send_packet(data)
